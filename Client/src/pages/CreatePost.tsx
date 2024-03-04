@@ -45,7 +45,7 @@ const CreatePost = () => {
       try {
         setgenratingImg(true);
         setdisable(true)
-        const { data } = await axios.post("http://localhost:3000/api/v1/dalle", { prompt: form.prompt })
+        const { data } = await axios.post("https://dall-e-image-generator-8csh.onrender.com/api/v1/dalle", { prompt: form.prompt })
         setForm({ ...form, photo: `data:image/jpeg;base64,${data.url}` })
         setgenratingImg(false);
         setdisable(false)
@@ -68,7 +68,7 @@ const CreatePost = () => {
       setLoading(true);
       setdisable(true)
       try {
-        const  data  = await axios.post("http://localhost:3000/api/v1/post", form)
+        const  data  = await axios.post("https://dall-e-image-generator-8csh.onrender.com/api/v1/post", form)
         if (data.status === 200) {
           navigate('/');
         }
