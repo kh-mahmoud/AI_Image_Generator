@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+:root {
+  /* Your default theme */
+  --background: white;
+  --foreground: black;
+}
+
+
+[data-theme='dark'] {
+  --background: black;
+  --foreground: white;
+  --primary: #0cf;
+}
+
+* {
+  font-family: 'Inter', sans-serif;
+}
+
+.card_transition
+{
+ transition:  0.2s ease-in-out !important;
+}
+
+
+@media screen and (min-width: 480px) {
+  .card:nth-child(7n + 1) {
+      grid-column: auto/span 2;
+      grid-row: auto/span 2;
+  }
+}
+
+.prompt::-webkit-scrollbar {
+  width: 5px;
+}
+
+.prompt::-webkit-scrollbar-thumb {
+background-color: #666e75;
+border-radius: 5px;
+}
+
+
+.nav-bar {
+  @apply w-full flex justify-between items-center bg-white sm:px-8 px-4 py-4 border-b border-b-[#e6ebf4];
+}
+
+.main {
+  @apply sm:p-8 px-4 py-8 w-full bg-[#f9fafe] min-h-[calc(100vh-73px)];
+}
+.custom_input {
+  @apply bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#6469ff] focus:border-[#6469ff] outline-none block w-full p-3
+}
+.img-preview {
+  @apply relative bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-64 p-3 h-64 flex justify-center items-center mt-5 cursor-pointer
+}
+
+.generate-image-button {
+  @apply text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center
+
+}
+
+.share-image-button {
+  @apply mt-3 text-white bg-[#6469ff] font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center
+}
+
+
