@@ -24,18 +24,11 @@ cloudinary.config({
 router.get("/", async (req, res) => {
    
    try {
-      if((await client.exists("posts")).length>0)
-      {
-         res.status(200).json({success:true,data:client.get("posts")})
-      }
-      else
-      {
-        const posts= await prisma.post.findMany({})
-        await client.set("posts",JSON.stringify(posts))
-        res.status(200).json({success:true,data:posts})
-      }
-
-   
+      const posts= await prisma.post.findMany({})
+       if(posts)
+       {
+          res.status(200).json({success:true,data:posts})
+       }
       
    } catch (error) {
        console.log(error.message)
