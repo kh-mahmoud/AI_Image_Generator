@@ -3,7 +3,6 @@ import dotenv from "dotenv"
 import {v2 as cloudinary} from 'cloudinary';
 import { prisma } from '../lib/index.js';
 import cors from 'cors'
-import {client} from "../config/index.js"
 
 dotenv.config()
 
@@ -45,7 +44,7 @@ router.post("/",async (req, res) => {
 
        const photoUrl = await cloudinary.uploader.upload(photo)
        const newPost= await prisma.post.create({data:{name,prompt,photo:photoUrl.url}})
-     client.del("posts")
+      
      res.status(200).json({success:true,data:newPost})
 
   } catch (error) {
