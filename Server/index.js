@@ -13,7 +13,7 @@ app.use(express.urlencoded({ limit: '10mb', extended: true }));
 
 
 const corsOptions = {
-    origin: 'https://dall-e-image-generator-psi.vercel.app',
+    origin: 'https://octoai-image-generator-psi.vercel.app',
     optionsSuccessStatus: 200
 }
 
