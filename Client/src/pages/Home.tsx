@@ -66,22 +66,26 @@ const Home = () => {
 
   }, [])
 
-  const handleSearch=(e:React.ChangeEvent<HTMLInputElement>)=>
-  {
 
-      clearTimeout(searchTimeout);
-      setSearchText(e.target.value);
-
-      setSearchTimeout(
-          setTimeout(() => {
-            const SearchResult=allPosts.filter((item)=>item.name.toLowerCase().includes(searchText.toLowerCase()) || item.prompt.toLowerCase().includes(searchText.toLowerCase()));
-
-            setSearchResult(SearchResult);
-        }, 500)
-      );
-    
-  }
-
+  
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    clearTimeout(searchTimeout as number); // Cast searchTimeout to number
+  
+    setSearchText(e.target.value);
+  
+    setSearchTimeout(
+      setTimeout(() => {
+        const SearchResult = allPosts.filter(
+          (item) =>
+            item.name.toLowerCase().includes(searchText.toLowerCase()) ||
+            item.prompt.toLowerCase().includes(searchText.toLowerCase())
+        );
+  
+        setSearchResult(SearchResult);
+      }, 500) as unknown as number // Cast result of setTimeout to number
+    );
+  };
+  
 
 
   return (
