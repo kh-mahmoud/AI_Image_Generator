@@ -6,13 +6,19 @@ import postRouter from "./Routes/post.routes.js"
 
 const app = express()
 
-app.use(express.json());
+// Increase the payload size limit to 10 MB(adjust this value as needed)
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ limit: '10mb', extended: true }));
+
+
 
 const corsOptions = {
     origin: 'https://dall-e-image-generator-psi.vercel.app',
-    optionsSuccessStatus: 200 
-  }
-  
+    optionsSuccessStatus: 200
+}
+
+
+
 
 app.use(cors(corsOptions))
 dotenv.config()
