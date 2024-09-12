@@ -3,31 +3,31 @@ import { downloadImage } from '../utils';
 import { Post } from '../types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
-import { motion, useAnimation} from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
 import state from '../store';
+import pixel from "../assets/pixel.jpeg"
 
 
 
-
-const Card = ({ id, name, prompt, photo }: Post) => {
+const Card = ({ id, name, prompt, photo, blurData }: Post) => {
 
   const controls = useAnimation(); // Initialize animation controls
 
-
-
-  const handleHover = async() => {
+  const handleHover = async () => {
     controls.start({
       opacity: 1,
-      
+
     });
   };
 
-    const handleleav = async() => {
+  const handleleav = async () => {
     controls.start({
       opacity: 0,
-      
+
     });
   };
+  
+
 
 
   return (
@@ -36,13 +36,15 @@ const Card = ({ id, name, prompt, photo }: Post) => {
       onMouseLeave={handleleav}
       className="rounded-xl group relative shadow-card cursor-pointer  hover:shadow-cardhover  card"
     >
-      <motion.div layoutId={`image-${id}`} transition={{duration:0.2}}>
+      <motion.div layoutId={`image-${id}`} transition={{ duration: 0.2 }}>
         <LazyLoadImage
           className="w-full h-auto card_transition  object-fill rounded-xl"
           effect="blur"
+          threshold={100}
+          placeholderSrc={blurData}
           src={photo}
           alt={prompt}
-          onClick={()=>{state.selected={id, name, prompt, photo}}}
+          onClick={() => { state.selected = { id, name, prompt, photo } }}
         />
       </motion.div>
 

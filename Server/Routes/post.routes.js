@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import {v2 as cloudinary} from 'cloudinary';
 import { prisma } from '../lib/index.js';
 import cors from 'cors'
+import { getBase64 } from '../utils/index.js';
 
 dotenv.config()
 
@@ -24,11 +25,20 @@ router.get("/", async (req, res) => {
    
    try {
       const posts= await prisma.post.findMany({})
-       if(posts)
-       {
-          res.status(200).json({success:true,data:posts})
-       }
-      
+
+      if (posts) {
+         // Use Promise.all to resolve all the async operations
+         const newPosts = await Promise.all(
+           posts.map(async (post) => {
+             const blurData = await getBase64(post.photo);
+             return { ...post, blurData };
+           })
+         );
+       
+         // Send the resolved posts with blurData
+         res.status(200).json({success:true,data:newPosts})
+      }
+       
    } catch (error) {
        console.log(error.message)
        res.status(500).json({success:false,message:error.message})

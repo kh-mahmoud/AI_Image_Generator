@@ -26,6 +26,7 @@ const Home = () => {
     name: '',
     prompt: '',
     photo: '',
+    blurData:'',
   }]);
 
   const [searchText, setSearchText] = useState('');
@@ -34,6 +35,7 @@ const Home = () => {
     name: '',
     prompt: '',
     photo: '',
+    blurData:'',
   }])
    
    const [searchTimeout, setSearchTimeout] = useState<number>()
@@ -42,7 +44,7 @@ const Home = () => {
 
 
   const fetchPosts = async () => {
-    const { data } = await axios.get('https://dall-e-image-generator-8csh.onrender.com/api/v1/post');
+    const { data } = await axios.get('http://localhost:3000/api/v1/post');
     if (data.success === true) {
       setAllPosts(data.data.reverse());
       setLoading(false);
@@ -77,10 +79,9 @@ const Home = () => {
             setSearchResult(SearchResult);
         }, 500)
       );
-      
-       
-
+    
   }
+
 
 
   return (

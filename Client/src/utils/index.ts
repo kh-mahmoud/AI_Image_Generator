@@ -15,3 +15,5 @@ export const downloadImage = async (id:string,photo:string) => {
 
     FileSaver.saveAs(photo,`download-${id}.jpg`)
 }
+
+
