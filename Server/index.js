@@ -8,8 +8,13 @@ const app = express()
 
 app.use(express.json());
 
+const corsOptions = {
+    origin: 'https://dall-e-image-generator-psi.vercel.app',
+    optionsSuccessStatus: 200 
+  }
+  
 
-app.use(cors())
+app.use(cors(corsOptions))
 dotenv.config()
 
 
