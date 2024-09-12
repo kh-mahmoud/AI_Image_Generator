@@ -1,10 +1,10 @@
-# Dall-E_Image_Generator
+# Ai_Image_Generator
 
 ![app-wallpaper](https://github.com/user-attachments/assets/9f6fa72d-d106-4554-af48-ccaa67783c7c)
 
 
 
-🎨🤖 Dalle Masterpiece Generator 🚀🖼️
+🎨🤖 Ai Masterpiece Generator 🚀🖼️
 
 Turn your imagination into stunning digital art with Dalle Image Generator! 🌟 Unleash your creativity by creating unique images using your own prompts or let our auto prompt generator suprise  you. 🎨✨
 
