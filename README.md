@@ -1,6 +1,7 @@
 # Dall-E_Image_Generator
 
-![dall-e-image-generator](https://github.com/kh-mahmoud/Dall-E_Image_Generator/assets/97807779/3ab1dbcb-e067-4932-8ab6-b0d746764bdd)
+![app-wallpaper](https://github.com/user-attachments/assets/9f6fa72d-d106-4554-af48-ccaa67783c7c)
+
 
 
 🎨🤖 Dalle Masterpiece Generator 🚀🖼️
@@ -13,6 +14,6 @@ Let the AI work its magic to create a unique image based on your input.
 Share your masterpiece with friends, family, and fellow creators in our gallery.
 Dive into a world of endless creativity and imagination with Dalle Image Generator. Start creating, sharing, and inspiring today! 🚀🎨
 
-Explore the amazing app using this link: https://dall-e-image-generator-psi.vercel.app/
+Explore the amazing app using this link: https://octoai-image-generator-psi.vercel.app
 
  
