@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { preview } from '../assets';
 import { getRandomPrompt } from '../utils';
 import { FormField, Loader } from '../components';
 import Button from '../components/Button';
@@ -121,7 +120,7 @@ const CreatePost = () => {
               />
             ) : (
               <img
-                src={preview}
+                src={"preview.png"}
                 alt="preview"
                 className="w-9/12 h-9/12 object-contain opacity-40"
               />

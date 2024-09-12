@@ -1,4 +1,3 @@
-import { download } from '../assets';
 import { downloadImage } from '../utils';
 import { Post } from '../types';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -68,7 +67,7 @@ const Card = ({ id, name, prompt, photo, blurData }: Post) => {
             onClick={() => downloadImage(id, photo)}
             className="outline-none bg-transparent border-none"
           >
-            <img src={download} alt="download" className="w-6 h-6 object-contain invert" />
+            <img src={"/download.png"} alt="download" className="w-6 h-6 object-contain invert" />
           </button>
         </div>
       </motion.div>
