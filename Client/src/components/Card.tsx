@@ -53,7 +53,7 @@ const Card = ({ id, name, prompt, photo, blurData }: Post) => {
         transition={{ duration: 0.2 }}
         className="flex-col max-h-[94.5%] absolute bottom-0 left-0 right-0 bg-[#10131f] m-2 p-4 rounded-md"
       >
-        <p className="text-white text-sm overflow-y-auto prompt">{prompt}</p>
+        <p className="text-white line-clamp-3 text-sm overflow-y-auto prompt">{prompt}</p>
 
         <div className="mt-5 flex justify-between items-center gap-2">
           <div className="flex items-center gap-2">
